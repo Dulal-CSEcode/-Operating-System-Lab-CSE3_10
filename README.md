@@ -132,10 +132,6 @@ The repository is organized into directories for each lab exercise. Each directo
 
 Navigate to the specific lab directory and follow the instructions in the corresponding README files. For example, to run the first lab exercise:
 
-```bash
-cd lab1
-gcc lab1.c -o lab1
-./lab1
 
 
 ## Contributing
