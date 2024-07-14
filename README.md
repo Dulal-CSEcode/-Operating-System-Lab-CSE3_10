@@ -2,7 +2,7 @@
 
 Welcome to the Operating System Lab repository. This repository contains code, documentation, and resources for various operating system lab exercises and projects.
 
-![OS Lab](images/os_lab_banner.png)
+![OS Lab](images/os_lab_banner.PNG)
 
 ## Table of Contents
 
