@@ -1,4 +1,4 @@
-<p># --- Operating-System-Lab-CSE_310 ---</p>
+<h  align="center"># --- Operating-System-Lab-CSE_310 ---</h>
 
 Welcome to the Operating System Lab repository. This repository contains code, documentation, and resources for various operating system lab exercises and projects.
 
