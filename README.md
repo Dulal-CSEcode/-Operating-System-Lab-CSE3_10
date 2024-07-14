@@ -150,3 +150,8 @@ Please ensure your code follows the repository's coding standards and includes a
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+<br/>
+<h2 align="center"> Thanks for visit my - `Operating-System-Lab-CSE_310` repository.</h2>
+<h3 align="center">© All rights reserved by Dulal-CSEcode @2024 © Department of Computer Science and Engineering, GUB </h3>
