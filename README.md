@@ -1,4 +1,6 @@
 <h1 align="center"># --- Operating-System-Lab-CSE_310 ---</h1>
+<br />
+<br />
 
 Welcome to the Operating System Lab repository. This repository contains code, documentation, and resources for various operating system lab exercises and projects.
 
