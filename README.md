@@ -133,7 +133,6 @@ The repository is organized into directories for each lab exercise. Each directo
 Navigate to the specific lab directory and follow the instructions in the corresponding README files. For example, to run the first lab exercise:
 
 
-
 ## Contributing
 Contributions are welcome! To contribute, please follow these steps:
 
