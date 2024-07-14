@@ -136,3 +136,17 @@ Navigate to the specific lab directory and follow the instructions in the corres
 cd lab1
 gcc lab1.c -o lab1
 ./lab1
+
+
+## Contributing
+Contributions are welcome! To contribute, please follow these steps:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes and commit them (git commit -m 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Create a pull request.
+Please ensure your code follows the repository's coding standards and includes appropriate tests.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
