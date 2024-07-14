@@ -1,9 +1,28 @@
-echo "Enter the first string:"
-read string1
 
-echo "Enter the second string:"
-read string2
+sum_even=0
+sum_odd=0
 
-concat_string="$string1$string2"
+is_even() {
+    if [ $(($1 % 2)) -eq 0 ]; then
+        return 0
+    else
+        return 1
+    fi
+}
 
-echo "Concatenated string: $concat_string"
+echo "Enter numbers (separated by spaces):"
+read -a numbers
+
+
+for num in "${numbers[@]}"; do
+    if is_even $num; then
+        sum_even=$((sum_even + num))
+    else
+        sum_odd=$((sum_odd + num))
+    fi
+done
+
+
+echo "Sum of even numbers: $sum_even"
+echo "Sum of odd numbers: $sum_odd"
+
