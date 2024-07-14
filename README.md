@@ -147,7 +147,7 @@ Contributions are welcome! To contribute, please follow these steps:
 
 5. Create a pull request.
 
-6. Please ensure your code follows the repository's coding standards and includes appropriate tests.
+Please ensure your code follows the repository's coding standards and includes appropriate tests.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
