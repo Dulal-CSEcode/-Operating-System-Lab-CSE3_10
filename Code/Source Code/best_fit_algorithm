@@ -1,0 +1,102 @@
+#!/bin/bash
+
+MAX=25
+
+
+for ((i = 0; i < MAX; i++)); do
+    b[$i]=0
+    f[$i]=0
+    frag[$i]=0
+    bf[$i]=0
+    ff[$i]=0
+    bIndex[$i]=$i
+    fIndex[$i]=$i
+done
+
+
+read -p "Enter the number of blocks: " nb
+read -p "Enter the number of files: " nf
+
+
+echo "Enter the size of the blocks:"
+for ((i = 0; i < nb; i++)); do
+    read -p "Block $((i + 1)): " b[$i]
+done
+
+echo "Enter the size of the files:"
+for ((i = 0; i < nf; i++)); do
+    read -p "File $((i + 1)): " f[$i]
+done
+
+
+for ((i = 0; i < nb - 1; i++)); do
+    for ((j = i + 1; j < nb; j++)); do
+        if ((b[$i] > b[$j])); then
+
+            temp=${b[$i]}
+            b[$i]=${b[$j]}
+            b[$j]=$temp
+
+
+            tempIndex=${bIndex[$i]}
+            bIndex[$i]=${bIndex[$j]}
+            bIndex[$j]=$tempIndex
+        fi
+    done
+done
+
+for ((i = 0; i < nf - 1; i++)); do
+    for ((j = i + 1; j < nf; j++)); do
+        if ((f[$i] > f[$j])); then
+        
+            temp=${f[$i]}
+            f[$i]=${f[$j]}
+            f[$j]=$temp
+
+         
+            tempIndex=${fIndex[$i]}
+            fIndex[$i]=${fIndex[$j]}
+            fIndex[$j]=$tempIndex
+        fi
+    done
+done
+
+
+for ((i = 0; i < nf; i++)); do
+    highest=-1
+    for ((j = 0; j < nb; j++)); do
+        if ((bf[$j] == 0)); then
+            temp=$((b[$j] - f[$i]))
+            if ((temp >= 0)); then
+                if ((highest == -1 || temp < highest)); then
+                    ff[${fIndex[$i]}]=$j
+                    highest=$temp
+                fi
+            fi
+        fi
+    done
+    if ((highest != -1)); then
+        bf[${ff[${fIndex[$i]}]}]=1
+        frag[${fIndex[$i]}]=$highest
+        totalInternalFragmentation=$((totalInternalFragmentation + highest))
+        allocatedFiles=$((allocatedFiles + 1))
+    else
+        ff[${fIndex[$i]}]=-1
+        frag[${fIndex[$i]}]=0
+    fi
+done
+
+
+echo -e "\nFile_no\tFile_size\tBlock_no\tBlock_size\tFragment"
+for ((i = 0; i < nf; i++)); do
+    if ((ff[$i] != -1)); then
+        echo -e "$((i + 1))\t\t${f[$i]}\t\t$((bIndex[${ff[$i]}] + 1))\t\t${b[${ff[$i]}]}\t\t${frag[$i]}"
+    else
+        echo -e "$((i + 1))\t\t${f[$i]}\t\tNot Allocated\t\t-\t\t-"
+    fi
+done
+
+
+echo -e "\nTotal files allocated: $allocatedFiles"
+echo -e "Total internal fragmentation: $totalInternalFragmentation"
+
