@@ -98,8 +98,8 @@ To install the necessary dependencies and set up the lab environment, follow the
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/os-lab.git
-    cd os-lab
+    git clone https://github.com/Dulal-CSEcode/Operating-System-Lab-CSE_310.git
+    cd Operating-System-Lab-CSE_310
     ```
 
 2. Install any required packages or dependencies. For example, on a Debian-based system:
